@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pay Slip</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+        <h:outputStylesheet library="css" name="Emp_Page.css" />
+         <h:outputScript library="js" name="Login_Panel.js" />
+        
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body a:onload="#{emp.new_Pay()}">
+         <div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Emp_Page.xhtml">Employee</a>
+        <a href="Emp_Reg.xhtml">Registration</a>
+        <a href="Emp_Report.xhtml">Report</a>
+        <a href="Emp_Des.xhtml">Designation</a>
+        <a class="active" href="Emp_Pay.xhtml">Pay Slip</a>
+        <a href="Emp_PayRep.xhtml">Pay Slip Report</a>
+        </div>
+        <h:form id="login-form" prependId="false">
+            <div class="back1">
+            <center>
+                <table >
+                <tr><td>
+                <div class="tit">Employee Pay Slip</div></td></tr>
+                <tr><td>
+                <div><center>
+                <table cellpadding="10px">
+                    <div>
+                        <tr><td><h:inputText autocomplete="off" a:placeholder="Pay Id"  class="combtn" value="#{emp.pid}" id="payid" required="true"  requiredMessage="Check Pay ID"/></td>
+                            <td><h:inputText autocomplete="off" a:placeholder="Employee Id" class="combtn" value="#{emp.emp_id}" id="empid" /></td></tr>
+                            <tr><td><center><h:commandButton value="Calculate Netpay" class="zoom , buton" action="#{emp.cal_Net()}"/></center></td>
+                                <td><h:outputLabel value="Pay Slip Date" /></td></tr>
+                            <tr><td><h:inputText autocomplete="off" a:placeholder="Net Pay" class="combtn" value="#{emp.netpay}" id="netpay" /></td>
+                            <td><h:selectOneMenu a:placeholder="DD" value="#{emp.dd2}" class="combtn1">
+                                <f:selectItem itemValue="dd" itemLabel="dd" />
+                                <f:selectItem itemValue="01" itemLabel="01" /><f:selectItem itemValue="02" itemLabel="02" /><f:selectItem itemValue="03" itemLabel="03" />
+                                <f:selectItem itemValue="04" itemLabel="04" /><f:selectItem itemValue="05" itemLabel="05" /><f:selectItem itemValue="06" itemLabel="06" />
+                                <f:selectItem itemValue="07" itemLabel="07" /><f:selectItem itemValue="08" itemLabel="08" /><f:selectItem itemValue="09" itemLabel="09" />
+                                <f:selectItem itemValue="10" itemLabel="10" /><f:selectItem itemValue="11" itemLabel="11" /><f:selectItem itemValue="12" itemLabel="12" />
+                                <f:selectItem itemValue="13" itemLabel="13" /><f:selectItem itemValue="14" itemLabel="14" /><f:selectItem itemValue="15" itemLabel="15" />
+                                <f:selectItem itemValue="16" itemLabel="16" /><f:selectItem itemValue="17" itemLabel="17" /><f:selectItem itemValue="18" itemLabel="18" />
+                                <f:selectItem itemValue="19" itemLabel="19" /><f:selectItem itemValue="20" itemLabel="20" /><f:selectItem itemValue="21" itemLabel="21" />
+                                <f:selectItem itemValue="22" itemLabel="22" /><f:selectItem itemValue="23" itemLabel="23" /><f:selectItem itemValue="24" itemLabel="24" />
+                                <f:selectItem itemValue="25" itemLabel="25" /><f:selectItem itemValue="26" itemLabel="26" /><f:selectItem itemValue="27" itemLabel="27" />
+                                <f:selectItem itemValue="28" itemLabel="28" /><f:selectItem itemValue="29" itemLabel="29" /><f:selectItem itemValue="30" itemLabel="30" />
+                                <f:selectItem itemValue="31" itemLabel="31" />
+                        </h:selectOneMenu> &nbsp;
+                        <h:selectOneMenu a:placeholder="MM" value="#{emp.mm2}" class="combtn2">
+                                <f:selectItem itemValue="mm" itemLabel="mm" />
+                                <f:selectItem itemValue="01" itemLabel="01" /><f:selectItem itemValue="02" itemLabel="02" /><f:selectItem itemValue="03" itemLabel="03" />
+                                <f:selectItem itemValue="04" itemLabel="04" /><f:selectItem itemValue="05" itemLabel="05" /><f:selectItem itemValue="06" itemLabel="06" />
+                                <f:selectItem itemValue="07" itemLabel="07" /><f:selectItem itemValue="08" itemLabel="08" /><f:selectItem itemValue="09" itemLabel="09" />
+                                <f:selectItem itemValue="10" itemLabel="10" /><f:selectItem itemValue="11" itemLabel="11" /><f:selectItem itemValue="12" itemLabel="12" />
+                        </h:selectOneMenu> &nbsp;
+                        <h:selectOneMenu a:placeholder="DD" value="#{emp.yyyy2}" class="combtn3">
+                                <f:selectItem itemValue="yyyy" itemLabel="yyyy" />
+                               <f:selectItem itemValue="2005" itemLabel="2005" /><f:selectItem itemValue="2006" itemLabel="2006" /><f:selectItem itemValue="2007" itemLabel="2007" /><f:selectItem itemValue="2008" itemLabel="2008" /><f:selectItem itemValue="2009" itemLabel="2009" />
+                               <f:selectItem itemValue="2010" itemLabel="2010" /><f:selectItem itemValue="2011" itemLabel="2011" /><f:selectItem itemValue="2012" itemLabel="2012" /><f:selectItem itemValue="2013" itemLabel="2013" /><f:selectItem itemValue="2014" itemLabel="2014" />
+                               <f:selectItem itemValue="2015" itemLabel="2015" /><f:selectItem itemValue="2016" itemLabel="2016" /><f:selectItem itemValue="2017" itemLabel="2017" /><f:selectItem itemValue="2018" itemLabel="2018" /><f:selectItem itemValue="2019" itemLabel="2019" /><f:selectItem itemValue="2020" itemLabel="2020" /><f:selectItem itemValue="2021" itemLabel="2021" /><f:selectItem itemValue="2022" itemLabel="2022" />
+                        </h:selectOneMenu></td></tr>
+                            
+                    </div>
+                    </table>
+                    </center>     
+           <center> <table cellspacing="20px">
+                   <tr><td><h:commandButton value="Register Payment" class="zoom , buton" action="#{emp.reg_Pay()}" /></td>
+                       <td><h:commandButton value="Remove" class="zoom1 , buton"  action="#{emp.rem_Pay()}"/></td></tr>   
+               </table></center>
+                     
+            </div>
+            </td></tr>
+                <tr><td><center>#{emp.ss}
+                       <br/> <h:message for="payid"/>
+                        
+                        </center></td></tr> 
+                </table></center>
+            </div>
+            
+        </h:form>
+        #{emp.ss}
+    </h:body>
+</html>

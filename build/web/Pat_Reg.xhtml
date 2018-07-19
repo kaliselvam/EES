@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Patient Registration</title>
+        <h:outputStylesheet library="css" name="Home_Page.css" />
+         <h:outputStylesheet library="css" name="Pat_Page.css" />
+        <h:outputScript library="js" name="Login_Panel.js" />
+       <h:outputScript library="js" name="Emp_Page.js" />
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    
+       <h:body a:onload="#{pat.new_Pat()}">
+          <div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+            <div class="topnav">
+        <a class="active" href="Pat_Page.xhtml">Patient</a>
+        <a class="active" href="Pat_Reg.xhtml">Registration</a>
+        <a href="Pat_Report.xhtml">Report</a>
+        
+        </div>
+        <center>
+        <h:form id="login-form" prependId="false">
+            <div class="back1">
+            <table >
+                <tr><td>
+                <div class="tit">New Patient Registration</div></td></tr>
+                <tr><td>
+                <div><center>
+                
+                    <table cellpadding="10px">
+                    <div>
+                        <tr><td><h:inputText autocomplete="off" a:placeholder="Patient Id"  class="combtn" value="#{pat.pid}"/></td>
+                    <td><h:inputText autocomplete="off" a:placeholder="Name" class="combtn" value="#{pat.p_nam}"/></td></tr>
+                    <tr><td><h:selectOneRadio  value="#{pat.pat_gen}">
+                                <f:selectItem itemValue="male" itemLabel="Male" />
+                                <f:selectItem itemValue="female" itemLabel="Female" /> 
+                            </h:selectOneRadio></td>
+                        <td><center><h:selectOneMenu a:placeholder="DD" value="#{pat.dd}" class="combtn1">
+                                <f:selectItem itemValue="dd" itemLabel="dd" />
+                                <f:selectItem itemValue="01" itemLabel="01" /><f:selectItem itemValue="02" itemLabel="02" /><f:selectItem itemValue="03" itemLabel="03" />
+                                <f:selectItem itemValue="04" itemLabel="04" /><f:selectItem itemValue="05" itemLabel="05" /><f:selectItem itemValue="06" itemLabel="06" />
+                                <f:selectItem itemValue="07" itemLabel="07" /><f:selectItem itemValue="08" itemLabel="08" /><f:selectItem itemValue="09" itemLabel="09" />
+                                <f:selectItem itemValue="10" itemLabel="10" /><f:selectItem itemValue="11" itemLabel="11" /><f:selectItem itemValue="12" itemLabel="12" />
+                                <f:selectItem itemValue="13" itemLabel="13" /><f:selectItem itemValue="14" itemLabel="14" /><f:selectItem itemValue="15" itemLabel="15" />
+                                <f:selectItem itemValue="16" itemLabel="16" /><f:selectItem itemValue="17" itemLabel="17" /><f:selectItem itemValue="18" itemLabel="18" />
+                                <f:selectItem itemValue="19" itemLabel="19" /><f:selectItem itemValue="20" itemLabel="20" /><f:selectItem itemValue="21" itemLabel="21" />
+                                <f:selectItem itemValue="22" itemLabel="22" /><f:selectItem itemValue="23" itemLabel="23" /><f:selectItem itemValue="24" itemLabel="24" />
+                                <f:selectItem itemValue="25" itemLabel="25" /><f:selectItem itemValue="26" itemLabel="26" /><f:selectItem itemValue="27" itemLabel="27" />
+                                <f:selectItem itemValue="28" itemLabel="28" /><f:selectItem itemValue="29" itemLabel="29" /><f:selectItem itemValue="30" itemLabel="30" />
+                                <f:selectItem itemValue="31" itemLabel="31" />
+                            </h:selectOneMenu> &nbsp;
+                        <h:selectOneMenu a:placeholder="MM" value="#{pat.mm}" class="combtn2">
+                                <f:selectItem itemValue="mm" itemLabel="mm" />
+                                <f:selectItem itemValue="01" itemLabel="01" /><f:selectItem itemValue="02" itemLabel="02" /><f:selectItem itemValue="03" itemLabel="03" />
+                                <f:selectItem itemValue="04" itemLabel="04" /><f:selectItem itemValue="05" itemLabel="05" /><f:selectItem itemValue="06" itemLabel="06" />
+                                <f:selectItem itemValue="07" itemLabel="07" /><f:selectItem itemValue="08" itemLabel="08" /><f:selectItem itemValue="09" itemLabel="09" />
+                                <f:selectItem itemValue="10" itemLabel="10" /><f:selectItem itemValue="11" itemLabel="11" /><f:selectItem itemValue="12" itemLabel="12" />
+                        </h:selectOneMenu> &nbsp;
+                        <h:selectOneMenu a:placeholder="DD" value="#{pat.yyyy}" class="combtn3">
+                                <f:selectItem itemValue="yyyy" itemLabel="yyyy" />
+                               <f:selectItem itemValue="1960" itemLabel="1960" /><f:selectItem itemValue="1961" itemLabel="1961" /><f:selectItem itemValue="1962" itemLabel="1962" /><f:selectItem itemValue="1963" itemLabel="1963" /><f:selectItem itemValue="1964" itemLabel="1964" />
+                               <f:selectItem itemValue="1965" itemLabel="1965" /><f:selectItem itemValue="1966" itemLabel="1966" /><f:selectItem itemValue="1967" itemLabel="1967" /><f:selectItem itemValue="1968" itemLabel="1968" /><f:selectItem itemValue="1969" itemLabel="1969" />
+                               <f:selectItem itemValue="1970" itemLabel="1970" /><f:selectItem itemValue="1971" itemLabel="1971" /><f:selectItem itemValue="1972" itemLabel="1972" /><f:selectItem itemValue="1973" itemLabel="1973" /><f:selectItem itemValue="1974" itemLabel="1974" />
+                               <f:selectItem itemValue="1975" itemLabel="1975" /><f:selectItem itemValue="1976" itemLabel="1976" /><f:selectItem itemValue="1977" itemLabel="1977" /><f:selectItem itemValue="1978" itemLabel="1978" /><f:selectItem itemValue="1979" itemLabel="1979" />
+                               <f:selectItem itemValue="1980" itemLabel="1980" /><f:selectItem itemValue="1981" itemLabel="1981" /><f:selectItem itemValue="1982" itemLabel="1982" /><f:selectItem itemValue="1983" itemLabel="1983" /><f:selectItem itemValue="1984" itemLabel="1984" />
+                               <f:selectItem itemValue="1985" itemLabel="1985" /><f:selectItem itemValue="1986" itemLabel="1986" /><f:selectItem itemValue="1987" itemLabel="1987" /><f:selectItem itemValue="1988" itemLabel="1988" /><f:selectItem itemValue="1989" itemLabel="1989" />
+                               <f:selectItem itemValue="1990" itemLabel="1990" /><f:selectItem itemValue="1991" itemLabel="1991" /><f:selectItem itemValue="1992" itemLabel="1992" /><f:selectItem itemValue="1993" itemLabel="1993" /><f:selectItem itemValue="1994" itemLabel="1994" />
+                               <f:selectItem itemValue="1995" itemLabel="1995" /><f:selectItem itemValue="1996" itemLabel="1996" /><f:selectItem itemValue="1997" itemLabel="1997" /><f:selectItem itemValue="1998" itemLabel="1998" /><f:selectItem itemValue="1999" itemLabel="1999" />
+                               <f:selectItem itemValue="2000" itemLabel="2000" /><f:selectItem itemValue="2001" itemLabel="2001" /><f:selectItem itemValue="2002" itemLabel="2002" /><f:selectItem itemValue="2003" itemLabel="2003" /><f:selectItem itemValue="2004" itemLabel="2004" />
+                               <f:selectItem itemValue="2005" itemLabel="2005" /><f:selectItem itemValue="2006" itemLabel="2006" /><f:selectItem itemValue="2007" itemLabel="2007" /><f:selectItem itemValue="2008" itemLabel="2008" /><f:selectItem itemValue="2009" itemLabel="2009" />
+                               <f:selectItem itemValue="2010" itemLabel="2010" /><f:selectItem itemValue="2011" itemLabel="2011" /><f:selectItem itemValue="2012" itemLabel="2012" /><f:selectItem itemValue="2013" itemLabel="2013" /><f:selectItem itemValue="2014" itemLabel="2014" />
+                               <f:selectItem itemValue="2015" itemLabel="2015" /><f:selectItem itemValue="2016" itemLabel="2016" /><f:selectItem itemValue="2017" itemLabel="2017" /><f:selectItem itemValue="2018" itemLabel="2018" />
+                            </h:selectOneMenu></center>
+                        </td></tr>
+                        <tr><td><h:selectOneMenu value="#{pat.hos_nam}"  class="combtn" >
+                                        <f:selectItems value="#{pat.get_hospital_name()}"></f:selectItems>
+                               </h:selectOneMenu></td>
+                            <td><center><h:selectOneMenu a:placeholder="Blood Group" value="#{pat.pat_bg}" class="combtn">
+                                <f:selectItem itemValue="BloodGroup" itemLabel="BloodGroup" />
+                                <f:selectItem itemValue="B+" itemLabel="B+" />
+                                <f:selectItem itemValue="B-" itemLabel="B-" />
+                                <f:selectItem itemValue="A+" itemLabel="A+" />
+                                <f:selectItem itemValue="A+" itemLabel="A-" />
+                                <f:selectItem itemValue="A+" itemLabel="O+" />
+                                <f:selectItem itemValue="A+" itemLabel="O-" />
+                                <f:selectItem itemValue="A+" itemLabel="AB+" />
+                                <f:selectItem itemValue="A+" itemLabel="AB-" />
+                                </h:selectOneMenu></center></td></tr>  
+                        <tr>
+                            <td><center><h:inputText autocomplete="off" a:placeholder="Door No / Area" class="combtn" value="#{pat.pat_dno}" /></center></td>
+                            <td><center><h:inputText autocomplete="off" a:placeholder="City" class="combtn" value="#{pat.pat_city}" /></center></td>
+                        </tr>
+                        <tr>
+                            <td><center><h:inputText autocomplete="off" a:placeholder="Pincode" class="combtn" value="#{pat.pat_pin}" /></center></td>
+                            <td><center><h:inputText autocomplete="off" a:placeholder="Contact Number" class="combtn" value="#{pat.pat_con}" /></center></td>
+                        </tr>
+                        
+                    </div>
+                    </table>
+            <table cellspacing="20px">
+                <tr><td><h:commandButton value="Register Patient" class="zoom , buton" action="#{pat.add_pat()}" /></td></tr>   
+            </table>
+                       
+            </center></div>
+            
+                    </td></tr>
+                <tr><td><center>#{pat.ss}</center></td></tr> 
+            </table>
+            </div>
+            
+        </h:form>
+            
+        </center>
+    </h:body>
+</html>
+

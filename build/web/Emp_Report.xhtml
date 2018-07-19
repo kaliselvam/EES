@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Employee Report</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+        <h:outputStylesheet library="css" name="Emp_Page.css" />
+         <h:outputScript library="js" name="Login_Panel.js" />
+        
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body>
+         <div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Emp_Page.xhtml">Employee</a>
+        <a href="Emp_Reg.xhtml">Registration</a>
+        <a class="active" href="Emp_Report.xhtml">Report</a>
+        <a href="Emp_Des.xhtml">Designation</a>
+        <a href="Emp_Pay.xhtml">Pay Slip</a>
+        <a href="Emp_PayRep.xhtml">Pay Slip Report</a>
+        </div>
+        <center>
+        <h:form>
+            <table align="left" >
+                <tr>
+                    <td>
+                        <div id="user-form">
+                            <br></br>
+                            &nbsp;&nbsp;<div id="user1-form"><br></br>&nbsp;Enter Employee Id</div>
+                            <br/><br/>
+                            <center><h:inputText label="Enter ID" value="#{emp.emp_id}" class="combtn" a:placeholder="Enter ID" /></center>
+                            <br/><br/>
+                            <center><h:commandButton action="#{emp.emp_Report()}" class="buton , zoom" value="Get Report" label="Get Report"/>
+                                    <h:commandButton action="#{emp.rem_Emp()}" class="buton , zoom1" value="Remove" label="Remove"/>
+                            </center>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="user2-form">
+                          <br/>
+                          &nbsp;&nbsp;<div id="user3-form"><br></br>&nbsp;Employee Details</div>
+                          <br/>
+                          <center>
+                          <table id="user4-form">
+                              <tr><td>Employee ID</td><td>#{emp.emp_id}</td></tr>
+                              <tr><td>Employee Name</td><td>#{emp.emp_nam}</td></tr>
+                              <tr><td>Date Of Birth</td><td>#{emp.d_o_b}</td></tr>
+                              <tr><td>Employee Gender</td><td>#{emp.emp_gen}</td></tr>
+                              <tr><td>Qualification</td><td>#{emp.emp_qual}</td></tr>
+                              <tr><td>Door / Street</td><td>#{emp.emp_dno}</td></tr>
+                              <tr><td>City / District</td><td>#{emp.emp_city}</td></tr>
+                              <tr><td>Contact Number</td><td>#{emp.emp_con}</td></tr>
+                              <tr><td>Date OF Joining</td><td>#{emp.d_o_j}</td></tr>
+                              <tr><td>Designation</td><td>#{emp.d_nam}</td></tr>
+                              <tr><td>ZIP CODE </td><td>#{emp.emp_zip}</td></tr>
+                          </table>
+                              <center> #{emp.ss}</center>
+                          </center>
+                         
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+           
+        </h:form>
+        </center>
+
+        
+    </h:body>
+</html>
+

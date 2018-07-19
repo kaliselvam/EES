@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Test Patient Report</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+         <h:outputStylesheet library="css" name="Test_Page.css" />
+        <h:outputScript library="js" name="Login_Panel.js" />
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body><div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Test_Page.xhtml">Testing</a>
+        <a href="Test_Reg.xhtml">New Test</a>
+        <a href="Test_Detail.xhtml">Test Details</a>
+        <a href="Test_Pat.xhtml">Test Patient</a>
+        <a class="active" href="Test_Report.xhtml">Patient Test Report</a>
+        </div>
+        <div>
+        <h:form>
+            <table align="left" >
+                <tr>
+                    <td>
+                        <div id="user-form">
+                            <br></br>
+                            &nbsp;&nbsp;<div id="user1-form"><br></br>&nbsp;Enter Test ID</div>
+                            <br/><br/>
+                            <center><h:inputText autocomplete="off" a:placeholder="Test ID"  class="combtn" value="#{test.t_id}" id="t_id" required="true"  requiredMessage="Enter Test ID"/></center>
+                            <br/><br/>
+                            <center><h:commandButton action="#{test.testPat_Report()}" class="buton , zoom" value="Get Report" label="Get Report"/>
+                                <h:commandButton action="#{test.rem_Test()}" class="buton , zoom1" value="Delete" label="Get Report"/></center>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="user2-form">
+                          <br/>
+                          &nbsp;&nbsp;<div id="user3-form"><br></br>&nbsp;Patient Test Report</div>
+                          <br/>
+                          <center>
+                          <table id="user4-form">
+                              
+                              <tr><td>Patient ID</td><td>#{test.pid}</td></tr>
+                              <tr><td>Patient Name</td><td>#{test.p_nam}</td></tr>
+                              <tr><td>Test Name</td><td>#{test.t_nam}</td></tr>
+                              <tr><td>Required Value </td><td>#{test.t_value}</td></tr>
+                              <tr><td>Normal Range</td><td>#{test.normal}</td></tr>
+                              <tr><td>Patient Value </td><td>#{test.value}</td></tr>
+                              <tr><td>Patient Range</td><td>#{test.range}</td></tr>
+                              <tr><td>Test Conducted On </td><td>#{test.t_date}</td></tr>
+                          </table>
+                              <center> #{test.ss}</center>
+                          </center>
+                         
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+           
+        </h:form>
+        </div> 
+    </h:body>
+</html>
+

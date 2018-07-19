@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Hospital Report</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+         <h:outputStylesheet library="css" name="Hos_Page.css" />
+        <h:outputScript library="js" name="Login_Panel.js" />
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body><div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Hos_Page.xhtml">Hospital</a>
+        <a href="Hos_Reg.xhtml">Registration</a>
+        <a class="active" href="Hos_Report.xhtml">Report</a>
+        </div>
+        <center>
+        <h:form>
+            <table align="left" >
+                <tr>
+                    <td>
+                        <div id="user-form">
+                            <br></br>
+                            &nbsp;&nbsp;<div id="user1-form"><br></br>&nbsp;Select Hospital Name</div>
+                            <br/><br/>
+                            <center><h:selectOneMenu value="#{hos.hos_nam}"  class="combtn" id="hosnam" required="true"  requiredMessage="Enter Hospital Name">
+                                        <f:selectItems value="#{hos.get_hospital_name()}"></f:selectItems>
+                               </h:selectOneMenu></center>
+                            <br/><br/>
+                            <center><h:commandButton action="#{hos.hos_Report()}" class="buton , zoom" value="Get Report" label="Get Report"/>
+                            <h:commandButton action="#{hos.rem_Hos()}" class="buton , zoom1" value="Delete" label="Get Report"/></center>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="user2-form">
+                          <br/>
+                          &nbsp;&nbsp;<div id="user3-form"><br></br>&nbsp;Hospital Details</div>
+                          <br/>
+                          <center>
+                          <table id="user4-form">
+                              <tr><td>Hospital Name</td><td>#{hos.hos_nam}</td></tr>
+                              <tr><td>Location</td><td>#{hos.hos_area}</td></tr>
+                              <tr><td>City</td><td>#{hos.hos_city}</td></tr>
+                              <tr><td>State</td><td>#{hos.hos_state}</td></tr>
+                              <tr><td>Pin code</td><td>#{hos.hos_pin}</td></tr>
+                              <tr><td>Total patient</td><td>#{hos.con_per}</td></tr>
+                          </table>
+                              <center> #{hos.ss}
+                              <br /><h:message class="texty1" for="hosnam"/></center>
+                          </center>
+                         
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+           
+        </h:form>
+        </center>
+    </h:body>
+</html>
+

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Patient Report</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+        <h:outputScript library="js" name="Login_Panel.js" />
+        <h:outputStylesheet library="css" name="Pat_Page.css" />
+         <h:outputScript library="js" name="Emp_Page.js" />
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Pat_Page.xhtml">Patient</a>
+        <a href="Pat_Reg.xhtml">Registration</a>
+        <a class="active" href="Pat_Report.xhtml">Report</a>
+        </div>
+        <div>
+        <h:form>
+            <table align="left" >
+                <tr>
+                    <td>
+                        <div id="user-form">
+                            <br></br>
+                            &nbsp;&nbsp;<div id="user1-form"><br></br>&nbsp;Enter Patient ID</div>
+                            <br/><br/>
+                            <center><h:inputText label="Enter ID" value="#{pat.pid}" class="combtn" a:placeholder="Enter ID" /></center>
+                            <br/><br/>
+                            <center><h:commandButton action="#{pat.pat_Report()}" class="buton , zoom" value="Get Report" label="Get Report"/>
+                            <h:commandButton action="#{pat.rem_Pat()}" class="buton , zoom1" value="Delete" label="Get Report"/></center>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="user2-form">
+                          <br/>
+                          &nbsp;&nbsp;<div id="user3-form"><br></br>&nbsp;Patient Details</div>
+                          <br/>
+                          <center>
+                          <table id="user4-form">
+                              
+                              <tr><td>Patient ID </td><td>#{pat.pid}</td></tr>
+                              <tr><td>Hospital Name </td><td>#{pat.hos_nam}</td></tr>
+                              <tr><td>Patient Name </td><td>#{pat.p_nam}</td></tr>
+                              <tr><td>Date Of Birth </td><td>#{pat.d_o_b}</td></tr>
+                              <tr><td>Gender </td><td>#{pat.pat_gen}</td></tr>
+                              <tr><td>Blood Group </td><td>#{pat.pat_bg}</td></tr>
+                              <tr><td>Door No / Area </td><td>#{pat.pat_dno}</td></tr>
+                              <tr><td>City </td><td>#{pat.pat_city}</td></tr>
+                              <tr><td>Pin code </td><td>#{pat.pat_pin}</td></tr>
+                              <tr><td>Contact Number</td><td>#{pat.pat_con}</td></tr>
+                          </table>
+                              <center> #{pat.ss}</center>
+                          </center>
+                         
+                        </div>
+                    </td>
+                </tr>
+                 
+            </table>
+           
+        </h:form>
+        </div>
+     </h:body>
+</html>

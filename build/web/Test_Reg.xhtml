@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> New Test</title>
+         <h:outputStylesheet library="css" name="Home_Page.css" />
+         <h:outputStylesheet library="css" name="Test_Page.css" />
+        <h:outputScript library="js" name="Login_Panel.js" />
+        <meta name="viewport" content="width=decive-width, initial-scale=1"></meta>
+    </h:head>
+    <h:body><div id="mySidenav" class="sidenav">
+            <a href="javacript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Emp_Page.xhtml">Employee</a>
+            <a href="Sup_Page.xhtml">Supplier</a>
+            <a href="Hos_Page.xhtml">Hospital</a>
+            <a href="Pat_Page.xhtml">Patient</a>
+            <a href="Che_Page.xhtml">Chemicals</a>
+            <a href="Test_Page.xhtml">Testing</a>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <a href="Home_Page.xhtml">Home</a>
+            <a href="Login_Panel.xhtml">Logout</a>
+        </div>
+        <div class="banner">
+            <span style="font-size: 30px;cursor: pointer" onclick="openNav()" ><div class="glow">&#9776; MENU </div><center><h2>Embellished Exemplary System</h2> </center></span>
+        <br></br><br></br>
+        </div>
+        <div class="topnav">
+        <a class="active" href="Test_Page.xhtml">Testing</a>
+        <a class="active" href="Test_Reg.xhtml">New Test</a>
+        <a href="Test_Detail.xhtml">Test Details</a>
+        <a href="Test_Pat.xhtml">Test Patient</a>
+        <a href="Test_Report.xhtml">Patient Test Report</a>
+        </div>
+        <center>
+        <h:form id="login-form" prependId="false">
+            <div class="back1">
+            <table >
+                <tr><td>
+                <div class="tit">New Test Registration</div></td></tr>
+                <tr><td>
+                <div><center>
+                
+                    <table cellpadding="10px">
+                    <div>
+                        <tr><td><h:inputText autocomplete="off" a:placeholder="Test Name"  class="combtn" value="#{test.t_nam}" id="t_nam" required="true"  requiredMessage="Enter Test Name"/></td>
+                            <td><h:inputText autocomplete="off" a:placeholder="Test Value" class="combtn" value="#{test.t_value}" id="t_value" required="true"  requiredMessage="Enter Test Value"/></td></tr>
+                            <tr><td><h:inputText a:placeholder="Normal Range" class="combtn" value="#{test.normal}" id="normal" required="true"  requiredMessage="Enter Normal Range"/></td>
+                                <td><h:inputText a:placeholder="Amount" class="combtn" value="#{test.amt}" id="amt" required="true"  requiredMessage="Enter Amount"/></td></tr>
+                    </div>
+                    </table>
+            <table cellspacing="20px">
+                <tr><td><h:commandButton value="Add Test" class="zoom , buton" action="#{test.reg_Test()}" /></td></tr>   
+            </table>
+                  #{test.ss}
+                  <br /><h:message class="texty1" for="t_nam"/>
+                  <br /><h:message class="texty1" for="t_value"/>
+                  <br /><h:message class="texty1" for="normal"/>
+                  <br /><h:message class="texty1" for="amt"/>
+            </center></div>
+                </td></tr>
+                <tr><td><center></center></td></tr> 
+            </table>
+            </div>
+            
+        </h:form>
+            
+        </center>
+        
+    </h:body>
+</html>
+
